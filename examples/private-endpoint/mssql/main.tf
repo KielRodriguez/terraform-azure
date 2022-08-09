@@ -31,3 +31,12 @@ module "mssql" {
   location = "East US 2"
   rg_name  = azurerm_resource_group.rg.name
 }
+
+module "vm" {
+  source = "./modules/vm"
+
+  location = "East US 2"
+  rg_name  = azurerm_resource_group.rg.name
+
+  subnet_id = module.vnet.default_subnet_id
+}
