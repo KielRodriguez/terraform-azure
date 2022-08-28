@@ -8,6 +8,7 @@ resource "azurerm_mssql_server" "server" {
     version = "12.0"
     administrator_login = "AdminUser"
     administrator_login_password = "1234SomePassword"
+    public_network_access_enabled = false
 
 }
 
@@ -17,4 +18,8 @@ resource "azurerm_mssql_database" "database" {
     collation = "SQL_Latin1_General_CP1_CI_AS"
     license_type = "LicenseIncluded"
     sku_name = "Basic"
+}
+
+output "mssql_server_id" {
+    value = azurerm_mssql_server.server.id
 }

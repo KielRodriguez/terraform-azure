@@ -19,8 +19,15 @@ resource "azurerm_subnet" "mssql" {
     resource_group_name = var.rg_name
     virtual_network_name = azurerm_virtual_network.vnet.name
     address_prefixes = ["10.0.1.0/24"]
+    enforce_private_link_endpoint_network_policies = true
 }
+
+
 
 output "default_subnet_id" {
     value = azurerm_subnet.default.id
+}
+
+output "mssql_subnet_id" {
+    value = azurerm_subnet.mssql.id
 }
