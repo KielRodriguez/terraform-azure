@@ -35,10 +35,11 @@ module "mssql" {
 module "privateendpoint" {
   source = "./modules/privateendpoint"
 
-  location          = "East US 2"
-  mssql_server_id   = module.mssql.mssql_server_id
-  subnet_id         = module.vnet.mssql_subnet_id
-  rg_name           = azurerm_resource_group.rg.name
+  location        = "East US 2"
+  mssql_server_id = module.mssql.mssql_server_id
+  subnet_id       = module.vnet.mssql_subnet_id
+  rg_name         = azurerm_resource_group.rg.name
+  vnet_id         = module.vnet.vnet_id
 }
 
 module "vm" {
