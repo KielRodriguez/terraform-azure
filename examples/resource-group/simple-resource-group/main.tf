@@ -15,3 +15,7 @@ resource "azurerm_resource_group" "rg" {
   name     = "rg-${var.project_name}"
   location = "East US 2"
 }
+
+output "rg_name" {
+  value = azurerm_resource_group.rg.name
+}
