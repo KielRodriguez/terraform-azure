@@ -58,5 +58,5 @@ resource "azurerm_windows_virtual_machine" "vm" {
 }
 
 output "ip_address" {
-    value = azurerm_public_ip.pip.ip_address
+  value = azurerm_public_ip.pip.ip_address
 }

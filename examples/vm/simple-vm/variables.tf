@@ -31,8 +31,8 @@ variable "rg_name" {
 }
 
 variable "subnet_id" {
-  type        = string
-  
+  type = string
+
   description = <<EOT
   [Required] Subnet id where the VM will be deployed
   EOT
